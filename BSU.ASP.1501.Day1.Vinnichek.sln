@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1_NewtonMethod", "Task1_NewtonMethod\Task1_NewtonMethod.csproj", "{F8B6FF4B-49B6-4439-8543-9A4560316429}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2_Jagged array", "Task2_Jagged array\Task2_Jagged array.csproj", "{5D1EC258-5843-4EAA-8AFE-66343E57AB55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIForTests", "UIForTests\UIForTests.csproj", "{B8985D31-BF0D-4C44-83A7-69D0D6FABFA7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8B6FF4B-49B6-4439-8543-9A4560316429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8B6FF4B-49B6-4439-8543-9A4560316429}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8B6FF4B-49B6-4439-8543-9A4560316429}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8B6FF4B-49B6-4439-8543-9A4560316429}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D1EC258-5843-4EAA-8AFE-66343E57AB55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D1EC258-5843-4EAA-8AFE-66343E57AB55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D1EC258-5843-4EAA-8AFE-66343E57AB55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D1EC258-5843-4EAA-8AFE-66343E57AB55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8985D31-BF0D-4C44-83A7-69D0D6FABFA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8985D31-BF0D-4C44-83A7-69D0D6FABFA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8985D31-BF0D-4C44-83A7-69D0D6FABFA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8985D31-BF0D-4C44-83A7-69D0D6FABFA7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
