@@ -11,12 +11,14 @@ namespace Task1_NewtonMethod
 
         public static double RootExtract(double A, int n, double e)
         {
-            if (Double.IsNaN(A) && Double.IsNaN(n) && Double.IsNaN(e))
-                return Double.NaN;
-            if (A < 0 && n % 2 == 0)
+            if (Double.IsNaN(A) || Double.IsNaN(n) || Double.IsNaN(e))               
                 return Double.NaN;
             if (n == 0)
                 return 1;
+            if (A < 0 && n % 2 == 0)
+                return Double.NaN;
+            if (Math.Abs(A) < e)
+                return 0;
 
             double x = A, x0;
 
