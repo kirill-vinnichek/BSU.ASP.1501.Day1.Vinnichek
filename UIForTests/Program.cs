@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Task1_NewtonMethod;
 using Task2_Jagged_array;
+using Task2_Jagged_array.Comparators;
 namespace UIForTests
 {
     class Program
@@ -35,8 +36,8 @@ namespace UIForTests
              }
              Console.WriteLine();
 
-              JaggedSort.Sort(ar,SortingType.IncreasingMaxElements);
-
+             IJagedCompare<int> c = new ComparatorByMaxElement(SortingType.Ascending);
+             ar.Sort(c);
 
               for (int i = 0; i < ar.Length; i++)
               {

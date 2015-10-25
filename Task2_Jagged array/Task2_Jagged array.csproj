@@ -39,6 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractJaggedComparator.cs" />
+    <Compile Include="Comparators\ComparatorByMaxElement.cs" />
+    <Compile Include="Comparators\ComparatorByMinElement.cs" />
+    <Compile Include="Comparators\ComparatorBySum.cs" />
+    <Compile Include="IJagedCompare.cs" />
     <Compile Include="JaggedSort.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
