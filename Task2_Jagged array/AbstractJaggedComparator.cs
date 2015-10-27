@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Task2_Jagged_array
 {
-    public abstract class AbstractJaggedComparator<T> : IJagedCompare<T>
+    public enum SortingType
+    {
+        Ascending, Descending
+    }
+
+    public abstract class AbstractJaggedComparator<T> : IJagedComparer<T>
     {
        private Dictionary<object, double> dictionary;
         public SortingType SortType
@@ -14,27 +19,22 @@ namespace Task2_Jagged_array
             get;
             set;
         }
-
-        //protected AbstractJaggedComparator()
-        //    : this(SortingType.Ascending)
-        //{
-           
-        //}
+       
         protected AbstractJaggedComparator(SortingType type)
         {
              dictionary = new Dictionary<object, double>();
              SortType = type;
         }
 
-        public bool Compare(T[] a, T[] b)
+        public int Compare(T[] a, T[] b)
         {
             double a_c, b_c;
             if (a == null && b == null)
-                return false;
+                return 0;
             if (a == null)
-                return true;
+                return 1;
             if (b == null)
-                return false;
+                return -1;
 
             if (!dictionary.TryGetValue(a, out a_c))
             {
@@ -49,10 +49,10 @@ namespace Task2_Jagged_array
             switch (SortType)
             {
                 case SortingType.Descending:
-                    return a_c < b_c;
+                    return a_c < b_c ? 1 : a_c > b_c ? -1 : 0;
                 case SortingType.Ascending:
                 default:
-                    return a_c > b_c;
+                    return a_c > b_c ? 1 : a_c < b_c ? -1 : 0;
             }
            
         }

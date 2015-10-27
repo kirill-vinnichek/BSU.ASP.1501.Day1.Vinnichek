@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Task2_Jagged_array
 {
-   public interface IJagedCompare<T> 
+   public interface IJagedComparer<T> 
     {
-       SortingType SortType{get;set;}
-       bool Compare(T[] a, T[] b);
+       int Compare(T[] a, T[] b);
     }
 }

@@ -7,11 +7,7 @@ using System.Threading.Tasks;
 
 namespace Task2_Jagged_array
 {
-    public enum SortingType
-    {
-        Ascending, Descending
-    }
-
+ 
     public static class JaggedSort
     {
 
@@ -22,14 +18,14 @@ namespace Task2_Jagged_array
             b = temp;
         }
 
-        public static void Sort(this int[][] array,IJagedCompare<int> comparator)
+        public static void Sort(this int[][] array,IJagedComparer<int> comparator)
         {
             if (array != null)
             {            
                 for (int i = 0; i < array.Length  - 1; i++)
                     for (int j = 0; j < array.Length - i - 1; j++)
                     {
-                        if(comparator.Compare(array[j],array[j+1]))
+                        if(comparator.Compare(array[j],array[j+1]) > 0)
                             Swap(ref array[j], ref array[j + 1]);
                     }
             }
