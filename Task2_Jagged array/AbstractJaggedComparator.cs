@@ -11,7 +11,7 @@ namespace Task2_Jagged_array
         Ascending, Descending
     }
 
-    public abstract class AbstractJaggedComparator<T> : IJagedComparer<T>
+    public abstract class AbstractJaggedComparator<T> : IComparer<T>
     {
        private Dictionary<object, double> dictionary;
         public SortingType SortType
@@ -26,7 +26,7 @@ namespace Task2_Jagged_array
              SortType = type;
         }
 
-        public int Compare(T[] a, T[] b)
+        public int Compare(T a, T b)
         {
             double a_c, b_c;
             if (a == null && b == null)
@@ -57,7 +57,7 @@ namespace Task2_Jagged_array
            
         }
 
-       protected abstract double GetComparsionFeature(T[] a);
+       protected abstract double GetComparsionFeature(T a);
        
     }
 }

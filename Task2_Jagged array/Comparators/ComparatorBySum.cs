@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task2_Jagged_array.Comparators
 {
-    public class ComparatorBySum : AbstractJaggedComparator<int>
+    public class ComparatorBySum : AbstractJaggedComparator<int[]>
     {
         public ComparatorBySum()
             : this(SortingType.Ascending)

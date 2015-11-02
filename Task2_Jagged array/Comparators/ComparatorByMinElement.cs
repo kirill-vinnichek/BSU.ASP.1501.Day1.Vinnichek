@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task2_Jagged_array.Comparators
 {
-    public class ComparatorByMinElement : IJagedComparer<int>
+    public class ComparatorByMinElement : IComparer<int[]>
     {
 
 

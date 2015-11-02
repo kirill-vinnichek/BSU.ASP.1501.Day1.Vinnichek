@@ -11,11 +11,12 @@ namespace Task2.Test
        
      
         [Test]
+        [ExpectedException("System.ArgumentNullException")]
         public void TestNull()
         {
             int[][] ar = null;
-            IJagedComparer<int> c = new ComparatorBySum(SortingType.Ascending);
-            ar.Sort(c);
+            DelegateToInterfaceSort.Sort(ar,new ComparatorBySum(SortingType.Ascending));
+            DelegateToInterfaceSort.Sort(ar, ComparatorByMaxElement.Compare);
 
         }
 
@@ -24,8 +25,9 @@ namespace Task2.Test
         {
             int[][] ar = new[] { new[] { 1 }, null, null, new[] { -2, 7, 5 }, null, new[] { 40, 2 } };
             int[][] test = new[] { new[] { 1 },new[] { -2, 7, 5 }, new[] { 40, 2 }, null, null, null };
-           
-            ar.Sort( new ComparatorBySum(SortingType.Ascending));
+
+            DelegateToInterfaceSort.Sort(ar,new ComparatorBySum(SortingType.Ascending));
+            InterfaceToDelegateSort.Sort(ar, new ComparatorBySum(SortingType.Ascending));
             IStructuralEquatable eq = ar;
             Assert.AreEqual(eq.Equals(test, StructuralComparisons.StructuralEqualityComparer), true);
         }
@@ -36,8 +38,8 @@ namespace Task2.Test
             int[][] ar = new[] { new[] { 1 }, null, null, new[] { -2, 7, 5 }, null, new[] { 40, 2 } };
             int[][] test = new[] { new[] { 40, 2 }, new[] { -2, 7, 5 }, new[] { 1 }, null, null, null };
 
-            IJagedComparer<int> c = new ComparatorBySum(SortingType.Descending);
-            ar.Sort(c);
+            DelegateToInterfaceSort.Sort(ar, new ComparatorBySum(SortingType.Descending));
+            InterfaceToDelegateSort.Sort(ar, new ComparatorBySum(SortingType.Descending));
             IStructuralEquatable eq = ar;
             Assert.AreEqual(eq.Equals(test, StructuralComparisons.StructuralEqualityComparer), true);
         }
@@ -47,8 +49,8 @@ namespace Task2.Test
             int[][] ar = new[] { new[] { 1 }, null, null, new[] { -2, 7, 5 }, null, new[] { 40, 2 } };
             int[][] test = new[] { new[] { -2, 7, 5 }, new[] { 1 }, new[] { 40, 2 }, null, null, null };
 
-            IJagedComparer<int> c = new ComparatorByMinElement();
-            ar.Sort(c);
+
+            InterfaceToDelegateSort.Sort(ar, new ComparatorByMinElement());
             IStructuralEquatable eq = ar;
             Assert.AreEqual(eq.Equals(test, StructuralComparisons.StructuralEqualityComparer), true);
         }

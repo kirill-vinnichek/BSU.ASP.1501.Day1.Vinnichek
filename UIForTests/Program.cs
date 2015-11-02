@@ -36,8 +36,7 @@ namespace UIForTests
              }
              Console.WriteLine();
 
-             IJagedComparer<int> c = new ComparatorByMaxElement(SortingType.Ascending);
-             ar.Sort(c);
+               InterfaceToDelegateSort.Sort(ar,ComparatorByMaxElement.Compare);
 
               for (int i = 0; i < ar.Length; i++)
               {
