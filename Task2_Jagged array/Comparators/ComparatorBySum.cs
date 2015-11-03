@@ -22,6 +22,7 @@ namespace Task2_Jagged_array.Comparators
 
         protected override double GetComparsionFeature(int[] a)
         {
+            
             return a.Sum();
         }
     }

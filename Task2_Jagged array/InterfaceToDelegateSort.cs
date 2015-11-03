@@ -10,22 +10,36 @@ namespace Task2_Jagged_array
     {
         public static void Sort<T>(T[] array, IComparer<T> comparator)
         {
+            if (comparator == null)
+                throw new ArgumentNullException("Comparator is null");
             Sort(array, comparator.Compare);
         }
 
-        public static void Sort<T>(T[] array, Helper.Compare<T> compare)
+        public static void Sort<T>(T[] array, Comparison<T> compare)
         {
             if (array == null)
                 throw new ArgumentNullException("Array is null");
             if (compare == null)
-                throw new ArgumentNullException("Compare is null");
-
-            for (int i = 0; i < array.Length - 1; i++)
-                for (int j = 0; j < array.Length - i - 1; j++)
+                if (!typeof(T).GetInterfaces().Contains(typeof(IComparable<T>)))
+                    throw new ArgumentNullException("compare is null");
+                else
                 {
-                    if (compare(array[j], array[j + 1]) > 0)
-                        Helper.Swap(ref array[j], ref array[j + 1]);
+                    for (int i = 0; i < array.Length - 1; i++)
+                        for (int j = 0; j < array.Length - i - 1; j++)
+                        {
+                            if (array[j] == null || (array[j] as IComparable<T>).CompareTo(array[j + 1]) > 0)
+                                Helper.Swap(ref array[j], ref array[j + 1]);
+                        }
                 }
+            else
+            {
+                for (int i = 0; i < array.Length - 1; i++)
+                    for (int j = 0; j < array.Length - i - 1; j++)
+                    {
+                        if (compare(array[j], array[j + 1]) > 0)
+                            Helper.Swap(ref array[j], ref array[j + 1]);
+                    }
+            }
         }
     }
 }
